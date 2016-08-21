@@ -1,0 +1,18 @@
+<table class =  "table">
+<tr>
+<th>All Projects for <%= @developer.name %> </th>
+<th> </th>
+
+<th>Projects</th>
+</tr>
+ <tr>
+   <%  @developer.projects.each do |developer|   %>
+   <td><%= developer.name %></td>
+   <td><%= link_to "/projects/#{developer.id}/add_time" , developer.name %></td>
+
+
+  <td><%=  developer.projects.count %></td>
+   <% end %>
+    <td><%=  link_to  'Update to Developer',  "/users/#{@developer.id}", method: :put  %></td>
+</tr>
+</table>

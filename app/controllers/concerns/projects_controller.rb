@@ -1,5 +1,5 @@
 class ProjectsController < ActionController::Base
-before_action :check_for_authorized_user
+before_action :authorized_user, only: [:edit, :update]
 
   def index
     @page = params[:page].to_i

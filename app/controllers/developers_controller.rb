@@ -1,9 +1,11 @@
-class DeveloperController < ActionController::Base
+class DevelopersController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authorized_user, only: [:edit, :update]
   #before_action :check_for_authorized_user
 
-
+  def index
+   @developer = Developer.find_by(id: session[:user_id])
+ end
 
   def new
     @developer = Developer.new

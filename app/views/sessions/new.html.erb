@@ -1,5 +1,5 @@
 <h1>Login to Employee Time Keeper</h1>
-<%= form_for :user, url: login_path do |f| %>
+<%= form :user, url: login_path do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
 
@@ -8,3 +8,7 @@
 
   <%= f.submit "Login" %>
 <% end %>
+
+
+# Should I <!DOCTYPE html>
+form_tag sessions_path do %>
