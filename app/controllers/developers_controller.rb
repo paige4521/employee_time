@@ -15,12 +15,10 @@ class DevelopersController < ActionController::Base
     @developer = Developer.new(developer_params)
   end
 
-
-# TODO: add location for redirection on line 18.
   def update
     @developer = Developer.find(params["id"])
       if @developer.update(developer_params)
-        redirect_to
+        redirect_to developers_path
       else
         render  :edit
       end

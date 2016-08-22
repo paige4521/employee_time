@@ -1,0 +1,22 @@
+<table class="table">
+
+  <th>Date</th>
+  <th>Project</th>
+  <th>Company</th>
+  <th>Team Member</th>
+
+
+
+  <tbody>
+    <% @project.each do |project| %>
+    <tr>
+      <td><%= project.created_at.to_date %></td>
+      <td><%= project.name %></td>
+      <td><%= project.developers.name %> </td>
+      <td> <%= link_to "Home", root_url %> </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+
+</table>

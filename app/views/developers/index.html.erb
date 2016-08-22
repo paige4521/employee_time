@@ -9,10 +9,17 @@
    <%  @developer.projects.each do |developer|   %>
    <td><%= developer.name %></td>
    <td><%= link_to "/projects/#{developer.id}/add_time" , developer.name %></td>
-
-
   <td><%=  developer.projects.count %></td>
    <% end %>
     <td><%=  link_to  'Update to Developer',  "/users/#{@developer.id}", method: :put  %></td>
+</tr>
+
+<th>Total Hours <%=@developer.name %> has billed to the following companies:</th>
+</tr>
+ <tr>
+   <%  @developer.clients.each do |client|   %>
+   <td><%= client.name %></td>
+  <td><%=  client.name.sort %></td>
+   <% end %>
 </tr>
 </table>
